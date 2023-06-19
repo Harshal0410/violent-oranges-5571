@@ -1,6 +1,7 @@
 # violent-oranges-5571
 
 # Car Rental Service
+![Logo](https://www.linkpicture.com/q/RentalCars-logo.png)
 
 This is a Car Rental Service which helps customer to register and rent available cars.
 This project is divided into two parts:
