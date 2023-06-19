@@ -62,10 +62,10 @@ public class Ui {
     				adminLogin(sc);
     				break;
     			case 2:
-//    				CustomerUI.userLogin(sc);
+    				CustomerUI.userLogin(sc);
     				break;
     			case 3:
-//    				CustomerUI.customerRegistration(sc);
+    				CustomerUI.customerRegistration(sc);
     				break;
     			case 0:
     				System.out.println("Thanks for using the services");
@@ -82,7 +82,7 @@ public class Ui {
 		System.out.println("2. Update car");
 		System.out.println("3. Delete car");
 		System.out.println("4. View list of cars in inventory");
-		System.out.println("5. View stats");
+//		System.out.println("5. View stats");
 		System.out.println("0. Logout");
 	}
 	

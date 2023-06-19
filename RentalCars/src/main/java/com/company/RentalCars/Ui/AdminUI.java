@@ -3,6 +3,8 @@ package com.company.RentalCars.Ui;
 import java.util.Scanner;
 
 import com.company.RentalCars.Entity.Car;
+import com.company.RentalCars.Exceptions.SomethingWentWrong;
+import com.company.RentalCars.Services.AdminServiceImpl;
 
 public class AdminUI {
 
@@ -20,7 +22,13 @@ public class AdminUI {
 		int aval = sc.nextInt();
 		
 		Car c = new Car(brand,model,year,milage,aval);
-		
+		AdminServiceImpl asi = new AdminServiceImpl();
+		try {
+			asi.addNewCar(c);
+		} catch (SomethingWentWrong e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void updateCar(Scanner sc) {
@@ -37,6 +45,13 @@ public class AdminUI {
 		int aval = sc.nextInt();
 		
 		Car c = new Car(brand,model,year,milage,aval);
+		AdminServiceImpl asi = new AdminServiceImpl();
+		try {
+			asi.updateCarDetails(c);
+		} catch (SomethingWentWrong e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void deleteCar(Scanner sc) {
@@ -50,7 +65,13 @@ public class AdminUI {
 
 	public static void viewCarList() {
 		// TODO Auto-generated method stub
-		
+		AdminServiceImpl asi = new AdminServiceImpl();
+		try {
+			asi.viewCarList();
+		} catch (SomethingWentWrong e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

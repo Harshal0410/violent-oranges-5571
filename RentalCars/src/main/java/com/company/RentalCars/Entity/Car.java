@@ -1,22 +1,28 @@
 package com.company.RentalCars.Entity;
 
-import jakarta.persistence.EmbeddedId;
+import java.util.Set;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.IdClass;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "car")
-@IdClass(CarId.class)
+//@IdClass(CarId.class)
 public class Car {
-	@EmbeddedId
-	
+	@Id
 	String brand;
 	String model;
 	int year;
 	double milage;
 	int availablity;
+	
+	@OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+	private Set<Order> orderSet;
 
+	
 	public Car() {
 		super();
 		// TODO Auto-generated constructor stub
